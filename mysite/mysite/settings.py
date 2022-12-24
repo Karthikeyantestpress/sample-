@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "clarifyit.apps.ClarifyitConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
