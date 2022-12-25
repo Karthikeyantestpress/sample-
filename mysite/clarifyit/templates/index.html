@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static 'css/output.css' %}" rel="stylesheet">
+  <title>Clarify It</title>
+</head>
+<body class="bg-purple-100 rounded">
+  <div class="">
+    <nav class="p-4 bg-white shadow-md md:flex md:items-center md:justify-around justify-between">
+      <div class="flex justify-between items-center">
+        <span class="text-gray-500 font-bold text-2xl font[Poppins]">Clarify It</span>
+        <span class="text-3xl cursor-pointer md:hidden block">
+          <ion-icon name="menu" onclick="menu(this)"></ion-icon>
+        </span>
+      </div>
+
+      <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0  md:w-auto md:py-0 py-4 md:pl-0 pl-6 opacity-0 md:opacity-100 top-[-400px] transition-all ease-in-out duration-1000 ">
+        <li class="mx-4 my-4 md:my-0">
+            <a href="{% url "home" %}" class="hover:text-sky-600 text-sky-500 text-xl font[Poppins]">Home</a>
+          </li>
+        <li class="mx-4 my-4 md:my-0">
+          <a href="#" class="hover:text-sky-600 text-sky-500 text-xl font[Poppins]">Questions</a>
+        </li>
+        <li class="mx-4 my-4 md:my-0">
+            <a href="{% url "logout" %}" class="hover:text-sky-600 text-sky-500 text-xl font[Poppins]">Logout</a>
+          </li>
+        <p class="mt-4 md:mt-0">
+          <a href="#" class="font-semibold text-xl font[Poppins] bg-gradient-to-r from-indigo-500 to-pink-500 hover:bg-gradient-to-r hover:from-pink-400 hover:to-orange-400 text-white py-1 px-5 rounded-2xl ml-0 md:ml-10">Ask a Question</a>
+        </p>
+      </ul>
+    </nav>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
