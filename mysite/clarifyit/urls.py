@@ -15,4 +15,9 @@ urlpatterns = [
         views.QuestionCreateView.as_view(),
         name="questions-create",
     ),
+    path(
+        "Answer",
+        views.AnswerListView.as_view(),
+        name="Answer_view",
+    ),
 ]

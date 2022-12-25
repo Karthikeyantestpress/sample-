@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from .models import Question
+from .models import Question, Answer
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -38,3 +38,8 @@ class QuestionCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         messages.success(self.request, "Your question has been added")
         return super().form_valid(form)
+
+
+class AnswerListView(LoginRequiredMixin, ListView):
+    model = Answer
+    template_name = "clarifyit/Answers.html"
