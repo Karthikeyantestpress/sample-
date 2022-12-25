@@ -10,4 +10,9 @@ urlpatterns = [
         views.QuestionDetailView.as_view(),
         name="questions-detail",
     ),
+    path(
+        "question_create",
+        views.QuestionCreateView.as_view(),
+        name="questions-create",
+    ),
 ]
