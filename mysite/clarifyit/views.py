@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from .models import Question
+from django.views.generic.list import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def default_page(request):
@@ -9,3 +12,8 @@ def default_page(request):
 @login_required
 def home(request):
     return render(request, "clarifyit/home.html")
+
+
+class QuestionListView(LoginRequiredMixin, ListView):
+    model = Question
+    template_name = "clarifyit/question_list.html"
