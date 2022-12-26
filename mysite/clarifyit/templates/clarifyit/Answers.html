@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block content %}
+ <div class="module py-3 px-16">
+    {% for Answer in object_list %}
+    <div class="Answer-info">
+          <b>Question</b> : <p>{{ Answer.question}}</p>
+         <b>Answer</b>:<p>{{ Answer.description }}</p>
+         <P>{{ Answer }}
+          </a>
+    {% empty %}
+      <p>You haven't asked a question yet</p>
+    {% endfor %}
+  </div>
+{% endblock %}
