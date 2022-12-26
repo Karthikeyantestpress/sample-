@@ -3,7 +3,10 @@
 {% block content %}
  <div class="module py-3 px-16">
     {% for question in object_list %}
+    <div class="question-info">
+        <a href="{{ question.get_absolute_url }}">
             <p>{{ question.title }}</p>
+          </a>
     {% empty %}
       <p>You haven't asked a question yet</p>
     {% endfor %}
