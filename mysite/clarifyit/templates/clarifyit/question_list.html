@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block content %}
+ <div class="module py-3 px-16">
+    {% for question in object_list %}
+            <p>{{ question.title }}</p>
+    {% empty %}
+      <p>You haven't asked a question yet</p>
+    {% endfor %}
+  </div>
+{% endblock %}
